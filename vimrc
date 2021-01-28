@@ -22,7 +22,8 @@ set autoread
 set scrolloff=10	"屏幕保持上面有5行或者下面有5行
 set pastetoggle=<F2>
 set ts=4
-
+set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
+"set fileencodings=utf-8,cp936,gb18030,big5
 "set autoindent
 """""""""""""""""""""""""""""""""""""""""""""""执行命令
 "设置光标样式
@@ -120,9 +121,9 @@ noremap <LEADER><CR> :nohlsearch<CR>
 noremap <LEADER>sp :set spell!<CR>
 
 "分屏切换光标
-noremap <LEADER>k <C-w>k
-noremap <LEADER>j <C-w>j
-noremap <LEADER>h <C-w>h
+noremap <LEADER>k <C-w>j
+noremap <LEADER>j <C-w>h
+noremap <LEADER>i <C-w>k
 noremap <LEADER>l <C-w>l
 
 "打开vimrc
@@ -132,7 +133,7 @@ map <LEADER>rc :e $HOME/.vim/vimrc<CR>
 noremap <LEADER><LEADER> <Esc>/<++><CR>c4l
 inoremap <C-<> <++>
 inoremap <C->> <++>
-inoremap <LEADER>- -->
+"inoremap <LEADER>- -->
 "the annotation of single line carrys out and cancels;
 noremap <LEADER>/ <C-0>i//<Esc>
 noremap <LEADER>// <C-0>xxi  <Esc>$a
@@ -155,10 +156,15 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' 													"管理Vundle自身 
 
 Plugin 'taglist.vim'
-Plugin 'a.vim'
+"Plugin 'a.vim'
 Plugin 'winmanager'
+"markdown
 Plugin 'iamcco/markdown-preview.nvim'										"markdown实时预览插件
 Plugin 'suan/vim-instant-markdown'
+Plugin 'dhruvasagar/vim-table-mode'											"markdown自动补全列表等功能
+Plugin 'plasticboy/vim-markdown'
+
+
 Plugin 'vim-scripts/DoxygenToolkit.vim'										"doxygen代码、文件等注释
 "Plugin 'vim-scripts/fcitx.vim'												"输入模式切换到正常模式时输入法自动切英文
 Plugin 'vim-tags'
@@ -171,10 +177,8 @@ Plugin 'majutsushi/tagbar'													"显示函数列表
 Plugin 'mbbill/undotree'													"以树型结构列出文件的历史版本，随意切换
 Plugin 'vimwiki/vimwiki'
 Plugin 'junegunn/goyo.vim'
-Plugin 'dhruvasagar/vim-table-mode'											"markdown自动补全列表等功能
 Plugin 'mhinz/vim-signify'
 Plugin 'vim-airline/vim-airline'											"
-Plugin 'plasticboy/vim-markdown'
 
 Plugin 'SirVer/ultisnips'													"补全代码块
 Plugin 'honza/vim-snippets'													"补全代码块
